@@ -1,8 +1,6 @@
-"""
-Problem Set 2
-Program: Just setting up my twttr
-Author: Alexis Varas Ortiz
-"""
+# Problem Set 2
+# Program: Just setting up my twttr
+# Author: Alexis Varas Ortiz
 
 vowels = "AaEeIiOoUu"
 
