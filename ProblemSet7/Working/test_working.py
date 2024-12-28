@@ -1,7 +1,7 @@
 # Problem Set 7
 # Program: Test Working 9 to 5
 # Alexis Varas Ortiz
-# Description:
+# Description: Test the convert function of working.py
 import pytest
 from working import convert
 
