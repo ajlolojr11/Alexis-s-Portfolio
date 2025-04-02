@@ -12,5 +12,3 @@ Here is what each set of projects focuses on:
 -ProjectSet7: Regular expressions
 -ProjectSet8: OOP (In Progress)
 -Final Project: (In Progress)
-
-
