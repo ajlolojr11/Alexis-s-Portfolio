@@ -1,11 +1,9 @@
 # Final Project
-# Program: Pong Clone
-# Alexis Varas Ortiz
+# Program: Pong Clone`
+# Alexis Varas Ortiz`
 # Description: A clone of the game pong, a 2D version of ping pong.
 #              DON'T LET THE BALL GO PAST YOU!
 
-
-#test
 import pygame, sys
 from pygame.locals import *
 
