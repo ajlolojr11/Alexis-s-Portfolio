@@ -10,5 +10,5 @@ Here is what each set of projects focuses on:
 -ProjectSet5: Unit Testing <br>
 -ProjectSet6: File I/O <br>
 -ProjectSet7: Regular expressions <br>
--ProjectSet8: OOP (In Progress) <br>
--Final Project: (In Progress)
+-ProjectSet8: OOP <br>
+-Final Project: Pong Clone (In Progress)
