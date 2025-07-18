@@ -1,4 +1,4 @@
-Hello. My name is Alexis. This repo acts as a portfolio for my programs as I build my programming skills. Included are some in-class examples, as well as the weekly problems/projects.
+Hello. My name is Alexis. This repo acts as a portfolio for my code/projects as I build my programming skills. Included are some in-class examples, as well as the weekly problems/projects.
 
 Here is what each set of projects focuses on:
 
