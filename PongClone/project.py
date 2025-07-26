@@ -48,10 +48,11 @@ class Paddles(pygame.Rect):
 
 
 class Ball(Paddles):
-    def __init__(self, surface, colr):
+    def __init__(self, surface, colr, position=(640, 351)):
         super().__init__(surface, colr)
         self.center = (640, 351)
         self._size = 10
+        self._position = position
         self.xspeed = random.choice([-3, 3])  # horizontal speed
         self.yspeed = 0  # vertical speed
 
@@ -64,18 +65,25 @@ class Ball(Paddles):
     @property
     def size(self):
         return self._size
+    
+    @property
+    def position(self):
+        return self._position
+    
+    @position.setter
+    def position(self, position):
+        self._position = position
 
 class Player2(Paddles):
     def __init__(self, surface, colr, position=(1250, 316)):
         super().__init__(surface, colr, position)
     
     def move(self):
-
         #Try to follow the ball
         if self.top < ball.top:
-            self.move_ip(0, 1)
+            self.move_ip(0, 2)
         if self.bottom > ball.bottom:
-            self.move_ip(0, -1)
+            self.move_ip(0, -2)
 
         #Sets limit on how far up or down they are able to move
         if self.top < 75:
@@ -109,9 +117,10 @@ bottom_border = pygame.Rect(15, 690, 1250,3)
 left_border = pygame.Rect(15, 70, 1, 620) 
 right_border = pygame.Rect(1265, 70, 1, 620)
 
-# Initialize scores and speed
+# Initialize scores and bouces
 score1 = 0
 score2 = 0
+bounces = 0
 
 
 def main():
@@ -158,13 +167,21 @@ def draw_game():
     screen.blit(font.render(str(score2), True, white), (690, 90))
 
 def check_collision():
-    global score1, score2
+    global score1, score2, bounces
 
     # Check for collisions with paddles and borders
     if ball.colliderect(player1) or ball.colliderect(player2):
-         ball.xspeed = -ball.xspeed
-         #Randomize the angle of the ball's bounce
-         ball.yspeed = -(random.randrange(-3, 3))
+        ball.xspeed = -ball.xspeed
+        #Randomize the angle of the ball's bounce
+        ball.yspeed = -(random.randrange(-3, 3))
+        #Increase ball speed every 5 bounces without scoring
+        bounces +=1
+        if bounces == 5:
+            if ball.xspeed > 0:
+                ball.xspeed += 1
+            else:
+                ball.xspeed -= 1
+            bounces = 0
                                 
 
     elif ball.colliderect(top_border) or ball.colliderect(bottom_border):
@@ -172,20 +189,71 @@ def check_collision():
         ball.yspeed = -ball.yspeed
 
     elif ball.colliderect(left_border):
-        score2 += 1
-        ball.center = (640, 351)        
-        ball.yspeed = 0  # Reset vertical speed   
+        score_goal(ball.center[0])
 
     elif ball.colliderect(right_border):
-        score1 += 1
-        ball.center = (640, 351)
-        ball.yspeed = 0  # Reset vertical speed   
+        score_goal(ball.center[0])
 
 def move_objects():
     player1.move()
     player2.move()
     ball.move()
 
+def score_goal(position):
+    global bounces, score1, score2
+
+    # Display the score when a goal is scored
+    if position < 640:
+        screen.blit(font.render("Player 2 Scored!", True, white), (400, 350))
+        score2 += 1
+        ball.center = (960, 351)       
+        ball.xspeed = -3  # Reset horizontal speed
+    else:
+        screen.blit(font.render("Player 1 Scored!", True, white), (400, 350))
+        score1 += 1
+        ball.center = (320, 351) 
+        ball.xspeed = 3  # Reset horizontal speed
+
+    # Check if either player has reached the score limit
+    if score1 >= 5 or score2 >= 5:
+        reset_game()
+        return
+
+    #Reset paddles, bounce count, and randomize serve angle
+    player1.top = 316
+    player2.top = 316
+    ball.yspeed = random.randrange(-2, 2)  # Random serve angle  
+    bounces = 0 
+
+
+    #Display scoring message and pause for a second
+    pygame.display.update()
+    pygame.time.delay(1000)
+    
+    #Redaw game and pause for a second to show ball starting position
+    screen.fill(black)  # Clear the screen
+    draw_game()  # Redraw the game objects
+    pygame.display.update()
+    pygame.time.delay(1000)
+
+def reset_game():
+    global score1, score2, bounces
+
+    score1 = 0
+    score2 = 0
+    ball.center = (640, 351)
+    ball.xspeed = random.choice([-3, 3])
+    ball.yspeed = 0
+
+    if score1 >= 5:
+        screen.blit(font.render("Winner!", True, white), (400, 350))
+        screen.blit(font.render("Player 1", True, white), (400, 450))
+    else:
+        screen.blit(font.render("Winner!", True, white), (400, 350))
+        screen.blit(font.render("Player 1", True, white), (400, 450))
+
+    pygame.time.delay(2000)
+    
 
 if __name__ == "__main__":
     main()
