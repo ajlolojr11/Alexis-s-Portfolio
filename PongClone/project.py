@@ -79,11 +79,11 @@ class Player2(Paddles):
         super().__init__(surface, colr, position)
     
     def move(self):
-        #AI movement logic
+        '''#AI movement logic
         if self.top < ball.top:
             self.move_ip(0, 2) #Upward speed
         if self.bottom > ball.bottom:
-            self.move_ip(0, -2) #Downward speed
+            self.move_ip(0, -2) #Downward speed'''
 
         #Sets limit on how far up or down they are able to move
         if self.top < 75:
@@ -120,8 +120,8 @@ left_border = pygame.Rect(15, 70, 1, 620)
 right_border = pygame.Rect(1265, 70, 1, 620)
 
 # Initialize scores and bouces
-score1 = 0
-score2 = 0
+score1 = 4
+score2 = 4
 bounces = 0
 
 #Sounds/Volume
@@ -291,12 +291,13 @@ def reset_game():
     if score1 >= 5 or score2 >= 5:
         # Display game over message and winner
         if score1 > score2:
-            screen.blit(font.render("You", True, green), (600, 260))
-            screen.blit(font.render("Win!", True, white), (595, 340))
+            screen.blit(font.render("You", True, green), (575, 260))
+            screen.blit(font.render("Win!", True, white), (570, 340))
         else:
             screen.blit(font.render("Opponent", True, red), (500, 260))
             screen.blit(font.render("Wins", True, white), (570, 340))
 
+        screen.blit(font.render(f"{score1} - {score2}", True, white), (580, 450))
         screen.blit(font2.render("Try again? Y/N", True, white), (600, 600))
         pygame.display.update()
 
@@ -309,6 +310,9 @@ def reset_game():
                     sys.exit()
                 if event.type == KEYDOWN:
                     pressed_keys = pygame.key.get_pressed()
+                    if pressed_keys[K_ESCAPE]: #Quit if escape is pressed
+                        pygame.quit()
+                        sys.exit()
                     if pressed_keys[K_y]: #Restart the game if 'y' is pressed
                         waiting = False
                     elif pressed_keys[K_n]: #Quit the game if 'n' is pressed
@@ -316,7 +320,10 @@ def reset_game():
                         sys.exit()
 
     
-    #Reset scores, ball position, ball speed, and reset flag
+    #Reset paddles, bounces, scores, ball position, ball speed, and reset flag
+    player1.top = 316
+    player2.top = 316
+    bounces = 0
     score1 = 0
     score2 = 0
     ball.center = (640, 351)
