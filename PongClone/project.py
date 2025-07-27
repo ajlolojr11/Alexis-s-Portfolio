@@ -95,6 +95,7 @@ class Player2(Paddles):
 # Initialize Pygame
 pygame.init()
 pygame.font.init()
+pygame.mixer.init()
 
 # Set up the display and fonts
 pygame.display.set_caption("Pong Clone")
@@ -107,6 +108,7 @@ fps = pygame.time.Clock()
 black = pygame.Color(0, 0, 0)
 white = pygame.Color(255, 255, 255)
 red = pygame.Color(255, 0, 0)
+green = pygame.Color(0, 255, 0)
 
 # Create game objects
 player1 = Paddles(screen, white)
@@ -122,8 +124,26 @@ score1 = 0
 score2 = 0
 bounces = 0
 
+#Sounds/Volume
+soundtrack = pygame.mixer.Sound("Galaxy.mp3")
+soundtrack.set_volume(0.7) 
+paddle_hit_sound = pygame.mixer.Sound("paddle_hit.mp3")
+paddle_hit_sound.set_volume(0.6)
+wall_hit_sound = pygame.mixer.Sound("wall_hit.mp3")
+wall_hit_sound.set_volume(0.1)
+goal_sound = pygame.mixer.Sound("score_goal.mp3")
+goal_sound.set_volume(0.4)
+game_over_sound = pygame.mixer.Sound("game_over.mp3")
+game_over_sound.set_volume(0.5)
+
+#Misc.
+pressed_keys = pygame.key.get_pressed()
+reset = True
+
 
 def main():
+    global reset
+    soundtrack.play(-1)  # Play soundtrack in a loop
 
     #Game loop
     while True:
@@ -131,13 +151,27 @@ def main():
             if event.type == QUIT:
                 pygame.quit()
                 sys.exit()
+            if event.type == KEYDOWN:
+                pressed_keys = pygame.key.get_pressed()
+                if pressed_keys[K_ESCAPE]:
+                    pygame.quit()
+                    sys.exit()
+                if pressed_keys[K_r]:
+                    reset_game()
+                if pressed_keys[K_SPACE]:
+                    pause_game()
+            
         screen.fill(black)  
           
         check_collision()
-        move_objects()
-        draw_game()   
-        
+        draw_game()
         pygame.display.update()
+        move_objects()
+
+        while reset:
+            pygame.time.delay(1000)  # Wait for a second before resetting
+            reset = False  # Exit the reset loop after the delay
+
         fps.tick(120)  #sets fps
 
 def draw_game():
@@ -150,7 +184,7 @@ def draw_game():
     #Draws middle dotted line
     middle_line = 70
     while middle_line < 690:
-        pygame.draw.rect(screen, white, pygame.Rect(637.5, middle_line, 5, 20))
+        pygame.draw.rect(screen, white, pygame.Rect(638, middle_line, 4, 20))
         middle_line += 60
     middle_line = 70
 
@@ -171,6 +205,7 @@ def check_collision():
 
     # Check for collisions with paddles and borders
     if ball.colliderect(player1) or ball.colliderect(player2):
+        paddle_hit_sound.play()
         ball.xspeed = -ball.xspeed
         #Randomize the angle of the ball's bounce
         ball.yspeed = -(random.randrange(-3, 3))
@@ -185,13 +220,12 @@ def check_collision():
                                 
 
     elif ball.colliderect(top_border) or ball.colliderect(bottom_border):
+        wall_hit_sound.play()
         # If the ball hits the top or bottom border, reverse its y direction
         ball.yspeed = -ball.yspeed
 
-    elif ball.colliderect(left_border):
-        score_goal(ball.center[0])
-
-    elif ball.colliderect(right_border):
+    elif ball.colliderect(left_border) or ball.colliderect(right_border):
+        goal_sound.play()
         score_goal(ball.center[0])
 
 def move_objects():
@@ -204,20 +238,23 @@ def score_goal(position):
 
     # Display the score when a goal is scored
     if position < 640:
-        screen.blit(font.render("Player 2 Scored!", True, white), (400, 350))
+        screen.blit(font.render("Opponent", True, red), (400, 360))
+        screen.blit(font.render("Scored", True, white), (700, 360))
         score2 += 1
+         # Reset horizontal speed and serve from opponent's side
         ball.center = (960, 351)       
-        ball.xspeed = -3  # Reset horizontal speed
+        ball.xspeed = -3 
     else:
-        screen.blit(font.render("Player 1 Scored!", True, white), (400, 350))
+        screen.blit(font.render("You", True, green), (470, 360))
+        screen.blit(font.render("Scored", True, white), (590, 360))
         score1 += 1
+        # Reset horizontal speed and serve from your side
         ball.center = (320, 351) 
-        ball.xspeed = 3  # Reset horizontal speed
+        ball.xspeed = 3  
 
     # Check if either player has reached the score limit
     if score1 >= 5 or score2 >= 5:
         reset_game()
-        return
 
     #Reset paddles, bounce count, and randomize serve angle
     player1.top = 316
@@ -228,7 +265,7 @@ def score_goal(position):
 
     #Display scoring message and pause for a second
     pygame.display.update()
-    pygame.time.delay(1000)
+    pygame.time.delay(2000)
     
     #Redaw game and pause for a second to show ball starting position
     screen.fill(black)  # Clear the screen
@@ -237,23 +274,63 @@ def score_goal(position):
     pygame.time.delay(1000)
 
 def reset_game():
-    global score1, score2, bounces
+    global score1, score2, bounces, reset
 
+    game_over_sound.play()
+    screen.fill(black)
+
+    if score1 >= 5 or score2 >= 5:
+        # Display game over message and winner
+        if score1 > score2:
+            screen.blit(font.render("You", True, green), (600, 260))
+            screen.blit(font.render("Win!", True, white), (595, 340))
+        else:
+            screen.blit(font.render("Opponent", True, red), (500, 260))
+            screen.blit(font.render("Wins", True, white), (570, 340))
+
+        screen.blit(font2.render("Try again? Y/N", True, white), (600, 600))
+        pygame.display.update()
+
+        #Waiting for user input to continue
+        waiting = True
+        while waiting:
+            for event in pygame.event.get():
+                if event.type == QUIT:
+                    pygame.quit()
+                    sys.exit()
+                if event.type == KEYDOWN:
+                    if pressed_keys[K_y]:
+                        waiting = False
+                    elif pressed_keys[K_n]:
+                        pygame.quit()
+                        sys.exit()
+
+    
+    #Reset scores and ball position
     score1 = 0
     score2 = 0
     ball.center = (640, 351)
     ball.xspeed = random.choice([-3, 3])
     ball.yspeed = 0
+    reset = True
 
-    if score1 >= 5:
-        screen.blit(font.render("Winner!", True, white), (400, 350))
-        screen.blit(font.render("Player 1", True, white), (400, 450))
-    else:
-        screen.blit(font.render("Winner!", True, white), (400, 350))
-        screen.blit(font.render("Player 1", True, white), (400, 450))
-
-    pygame.time.delay(2000)
-    
+def pause_game():
+    #New game loop to pause the game and wait for user input
+    while True:
+        for event in pygame.event.get():
+            if event.type == QUIT:
+                pygame.quit()
+                sys.exit()
+            if event.type == KEYDOWN:
+                pressed_keys = pygame.key.get_pressed()
+                if pressed_keys[K_ESCAPE]:
+                    pygame.quit()
+                    sys.exit()
+                if pressed_keys[K_r]:
+                    reset_game()
+                    return
+                if pressed_keys[K_SPACE]:
+                    return
 
 if __name__ == "__main__":
     main()
