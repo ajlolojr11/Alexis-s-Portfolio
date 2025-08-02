@@ -116,7 +116,7 @@ def test_score_goal_opponent():
     score1, score2, bounces, reset = score_goal(player1, player2, ball, screen, top_border, bottom_border, left_border, right_border, font,
                font2, score1, score2, white, red, black, green, bounces, reset)
 
-    #Player scores again and reached point limit. Scores, game objects, ball speed, bounces and reset flag are reset to initial values
+    #Point limit is reached. Scores, game objects, ball speed, bounces and reset flag are reset to initial values
     assert score1 == 0
     assert score2 == 0
     assert bounces == 0
