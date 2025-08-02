@@ -207,9 +207,8 @@ def draw_game(player1, player2, ball, screen, top_border, bottom_border, left_bo
     screen.blit(font2.render(str("Clone"), True, white) , (710, 50))
     screen.blit(font.render(str(score1), True, white) , (550, 90))
     screen.blit(font.render(str(score2), True, white), (690, 90))
-    screen.blit(font2.render(str("Press SPACE to pause"), True, white) , (340, 700))
-    screen.blit(font2.render(str("Press R to restart game"), True, white) , (580, 700))
-    screen.blit(font2.render(str("Press SPACE + R to reset ball"), True, white) , (820, 700))
+    screen.blit(font2.render(str("Press SPACE to pause"), True, white) , (510, 700))
+    screen.blit(font2.render(str("Press R to resett game"), True, white) , (650, 700))
 
     #Refresh the screen
     pygame.display.update()
@@ -364,10 +363,10 @@ def pause_game(player1, player2, ball, screen, font, font2, score1, score2, whit
                 if pygame.key.get_pressed()[K_ESCAPE]: #Quit if escape is pressed
                     pygame.quit()
                     sys.exit()
-                if pygame.key.get_pressed()[K_r]: #Reset the game if 'r' is pressed (for when ball glitches out of bounds)
+                if pygame.key.get_pressed()[K_r]: #Restart the game if 'r' is pressed
                     score1, score2, bounces, reset = reset_game(player1, player2, ball, screen,font, font2, score1, score2, white, red, black, green, bounces, reset)#game_over_sound
                     reset = True
-                    return reset
+                    return score1, score2, bounces, reset
                 if pygame.key.get_pressed()[K_SPACE]: #Resume the game if space is pressed
                     return
 

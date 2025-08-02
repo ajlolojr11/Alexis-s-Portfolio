@@ -19,7 +19,7 @@ def test_move_objects():
     move_objects(player1, player2, ball)
 
     assert player1.center == (25, 285) #Does not move without input
-    assert player2.center == (1255, 353) #Moves towards ball
+    assert player2.center == (1255, 353) #Moves towards ball. Center is originally at (1255, 355)
     assert ball.center == (637, 351) or ball.center == (643, 351) #Movement is initially set randomly left or right 3 pixels per frame
 
 def test_reset_game():
@@ -50,13 +50,13 @@ def test_reset_game():
     assert score2 == 0
     assert bounces == 0
     assert reset == True
-    assert player1.center == (25, 349)
-    assert player2.center == (1255, 349)
+    assert player1.center == (25, 351)
+    assert player2.center == (1255, 351)
     assert ball.center == (640, 351)
     assert ball.xspeed == 3 or ball.xspeed == -3
     assert ball.yspeed == 0
 
-'''def test_score_goal():
+def test_score_goal():
     pygame.font.init()
     screen = pygame.display.set_mode((1280, 720))
     black = pygame.Color(0, 0, 0)
@@ -83,12 +83,15 @@ def test_reset_game():
 
     assert score1 == 2
     assert score2 == 4
-    assert bounces ==0
+    assert bounces == 0
     assert reset == True
     assert player1.top == 316
     assert player2.top == 316
     assert ball.center == (960, 351)
     assert ball.xspeed == -3
     assert ball.yspeed == 0
-    assert reset == True'''
+    assert reset == True
 
+
+'''def test_check_collision():
+    ...'''
