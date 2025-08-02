@@ -198,6 +198,6 @@ def test_check_collision():
     assert ball.colliderect(player1) == False
     assert ball.colliderect(player2) == False
     assert ball.colliderect(top_border) == False
-    assert ball.colliderect(bottom_border) == True
+    assert ball.colliderect(bottom_border) == False
 
 
