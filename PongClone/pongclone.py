@@ -48,11 +48,10 @@ class Paddles(pygame.Rect):
 
 
 class Ball(Paddles):
-    def __init__(self, surface, colr, position=(640, 351)):
+    def __init__(self, surface, colr, position):
         super().__init__(surface, colr)
-        self.center = (640, 351)
         self._size = 10
-        self._position = position
+        self.center = position
         self.xspeed = random.choice([-3, 3])  # horizontal speed
         self.yspeed = 0  # default vertical speed
 
@@ -113,7 +112,7 @@ def main():
     # Create game objects
     player1 = Paddles(screen, white)
     player2 = Player2(screen, white)
-    ball = Ball(screen, white)
+    ball = Ball(screen, white,  (640, 351))
     top_border = pygame.Rect(15, 67, 1250, 3) 
     bottom_border = pygame.Rect(15, 690, 1250,3) 
     left_border = pygame.Rect(15, 70, 1, 620) 
@@ -205,9 +204,8 @@ def draw_game(player1, player2, ball, screen, top_border, bottom_border, left_bo
     screen.blit(font2.render(str("Clone"), True, white) , (710, 50))
     screen.blit(font.render(str(score1), True, white) , (550, 90))
     screen.blit(font.render(str(score2), True, white), (690, 90))
-    screen.blit(font2.render(str("Press SPACE to pause"), True, white) , (340, 700))
-    screen.blit(font2.render(str("Press R to restart game"), True, white) , (580, 700))
-    screen.blit(font2.render(str("Press SPACE + R to reset ball"), True, white) , (820, 700))
+    screen.blit(font2.render(str("Press SPACE to pause"), True, white) , (510, 700))
+    screen.blit(font2.render(str("Press R to reset game"), True, white) , (650, 700))
 
     #Refresh the screen
     pygame.display.update()
@@ -245,31 +243,31 @@ def check_collision(player1, player2, ball, screen, top_border, bottom_border, l
     #Ball hits either goal
     elif ball.colliderect(left_border) or ball.colliderect(right_border):
         goal_sound.play()
-        score1, score2, bounces, reset = score_goal(ball.center[0], player1, player2, ball, screen, top_border, bottom_border, left_border, right_border, font,
+        score1, score2, bounces, reset = score_goal(player1, player2, ball, screen, top_border, bottom_border, left_border, right_border, font,
                    font2, score1, score2, white, red, black, green, game_over_sound, bounces, reset)
         
     return score1, score2, bounces, reset
 
 
-def score_goal(position, player1, player2, ball, screen, top_border, bottom_border, left_border, right_border, font,
+def score_goal(player1, player2, ball, screen, top_border, bottom_border, left_border, right_border, font,
                font2, score1, score2, white, red, black, green, game_over_sound, bounces, reset):
     # Clear the screen before displaying the score message
     screen.fill(black)
 
     # Display the score when a goal is scored
-    if position < 640: 
-        #If ball is on the left side of the screen display "Opponent Scored"
-        screen.blit(font.render("Opponent", True, red), (400, 360))
-        screen.blit(font.render("Scored", True, white), (700, 360))
+    if ball.colliderect(left_border): 
+        #If ball collides with left goal display "Opponent Scored"
+        screen.blit(font.render("Opponent", True, red), (650, 260))
+        screen.blit(font.render("Scored", True, white), (650, 360))
         score2 += 1 #Update score for opponent
 
         # Reset horizontal speed and serve from opponent's side
         ball.center = (960, 351)       
         ball.xspeed = -3 
-    else:
-        #If ball is on the left side of the screen display "You Scored"
-        screen.blit(font.render("You", True, green), (470, 360))
-        screen.blit(font.render("Scored", True, white), (590, 360))
+    elif ball.colliderect(right_border):
+        #If ball collides with righ goal display "You Scored"
+        screen.blit(font.render("You", True, green), (530, 260))
+        screen.blit(font.render("Scored", True, white), (440, 360))
         score1 += 1 #Update score for player
 
         # Reset horizontal speed and serve from your side
@@ -279,12 +277,14 @@ def score_goal(position, player1, player2, ball, screen, top_border, bottom_bord
     # Check if either player has reached the score limit
     if score1 >= 5 or score2 >= 5:
          score1, score2, bounces, reset = reset_game(player1, player2, ball, screen,font, font2, score1, score2, white, red, black, green, game_over_sound, bounces, reset)
+         return score1, score2, bounces, reset
 
     #Reset paddles, bounce count, and randomize serve angle
     player1.top = 316
     player2.top = 316
     ball.yspeed = random.randrange(-2, 2)  # Random serve angle  
-    bounces = 0 
+    bounces = 0
+    reset = True
 
     #Display scoring message and pause for two seconds
     pygame.display.update()
@@ -292,7 +292,6 @@ def score_goal(position, player1, player2, ball, screen, top_border, bottom_bord
     
     #Redaw game and pause for a second to show ball starting position
     draw_game(player1, player2, ball, screen, top_border, bottom_border, left_border, right_border, font, font2, score1, score2, white, red, black)
-    pygame.time.delay(1000)
 
     return score1, score2, bounces, reset
 
