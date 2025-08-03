@@ -112,7 +112,7 @@ def main():
     # Create game objects
     player1 = Paddles(screen, white)
     player2 = Player2(screen, white)
-    ball = Ball(screen, white,  (640, 351))
+    ball = Ball(screen, white, (640, 351))
     top_border = pygame.Rect(15, 67, 1250, 3) 
     bottom_border = pygame.Rect(15, 690, 1250,3) 
     left_border = pygame.Rect(15, 70, 1, 620) 
@@ -159,7 +159,7 @@ def main():
                     score1, score2, bounces, reset = reset_game(player1, player2, ball, screen, font, font2, score1, score2, white, red, black, green, game_over_sound, bounces, reset)
                 if pygame.key.get_pressed()[K_SPACE]:
                     soundtrack.set_volume(0)
-                    reset = pause_game(player1, player2, ball, screen, font, font2, score1, score2, white, red, black, green, game_over_sound, bounces, reset)
+                    score1, score2, bounces, reset = pause_game(player1, player2, ball, screen, font, font2, score1, score2, white, red, black, green, game_over_sound, bounces, reset)
                     soundtrack.set_volume(0.7)
         
         #Draw all game objects
@@ -265,7 +265,8 @@ def score_goal(player1, player2, ball, screen, top_border, bottom_border, left_b
 
         # Reset horizontal speed and serve from opponent's side
         ball.center = (960, 351)       
-        ball.xspeed = -3 
+        ball.xspeed = -3
+
     elif ball.colliderect(right_border):
         #If ball collides with righ goal display "You Scored"
         screen.blit(font.render("You", True, green), (530, 260))
@@ -365,8 +366,7 @@ def pause_game(player1, player2, ball, screen, font, font2, score1, score2, whit
                     sys.exit()
                 if pygame.key.get_pressed()[K_r]: #Reset the game if 'r' is pressed (for when ball glitches out of bounds)
                     score1, score2, bounces, reset = reset_game(player1, player2, ball, screen,font, font2, score1, score2, white, red, black, green, game_over_sound, bounces, reset)
-                    reset = True
-                    return reset
+                    return score1, score2, bounces, reset
                 if pygame.key.get_pressed()[K_SPACE]: #Resume the game if space is pressed
                     return
 
