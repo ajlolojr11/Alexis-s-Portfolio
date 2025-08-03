@@ -226,7 +226,7 @@ def check_collision(player1, player2, ball, screen, top_border, bottom_border, l
     if ball.colliderect(player1) or ball.colliderect(player2):
         paddle_hit_sound.play()
         ball.xspeed = -ball.xspeed #Reverse horizontal direction of the ball when bouncing off a paddle
-        ball.yspeed = -(random.randrange(-3, 3)) #Randomize the angle of the ball's bounce from the paddles
+        ball.yspeed = random.randrange(-3, 3) #Randomize the angle of the ball's bounce from the paddles
         
         #Increase ball speed every 5 paddle hits
         bounces +=1
