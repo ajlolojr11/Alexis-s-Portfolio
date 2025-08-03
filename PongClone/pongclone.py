@@ -158,7 +158,9 @@ def main():
                 if pygame.key.get_pressed()[K_r]:
                     score1, score2, bounces, reset = reset_game(player1, player2, ball, screen, font, font2, score1, score2, white, red, black, green, game_over_sound, bounces, reset)
                 if pygame.key.get_pressed()[K_SPACE]:
+                    soundtrack.set_volume(0)
                     reset = pause_game(player1, player2, ball, screen, font, font2, score1, score2, white, red, black, green, game_over_sound, bounces, reset)
+                    soundtrack.set_volume(0.7)
         
         #Draw all game objects
         draw_game(player1, player2, ball, screen, top_border, bottom_border, left_border, right_border, font, font2, score1, score2, white, red, black)
