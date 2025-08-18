@@ -368,7 +368,7 @@ def pause_game(player1, player2, ball, screen, font, font2, score1, score2, whit
                     score1, score2, bounces, reset = reset_game(player1, player2, ball, screen,font, font2, score1, score2, white, red, black, green, game_over_sound, bounces, reset)
                     return score1, score2, bounces, reset
                 if pygame.key.get_pressed()[K_SPACE]: #Resume the game if space is pressed
-                    return
+                    return score1, score2, bounces, reset
 
 
 if __name__ == "__main__":
