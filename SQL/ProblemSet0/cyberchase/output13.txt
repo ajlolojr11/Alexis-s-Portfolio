@@ -1,0 +1,10 @@
++----+------------------------+---------------------+
+| id |         title          |        topic        |
++----+------------------------+---------------------+
+| 9  | Clock Like An Egyptian | Time Keeping        |
+| 39 | A Time to Cook         | Elapsed Time        |
+| 49 | The Snelfu Snafu       | Saving Money        |
+| 50 | The Snelfu Snafu       | Spending Money      |
+| 53 | Balancing Act          | Budgeting Money     |
+| 61 | A Broom Of One's Own   | Time/Distance/Speed |
++----+------------------------+---------------------+

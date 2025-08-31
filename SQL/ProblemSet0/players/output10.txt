@@ -1,0 +1,284 @@
++-----------+---------------+---------------+---------+
+|   First   |     Last      |   Hometown    | Country |
++-----------+---------------+---------------+---------+
+| A. J.     | Jimenez       | San Juan      | P.R.    |
+| Alex      | Cora          | Caguas        | P.R.    |
+| Alex      | Hernandez     | San Juan      | P.R.    |
+| Alex      | Cintron       | Humacao       | P.R.    |
+| Alex      | Claudio       | San Juan      | P.R.    |
+| Alexis    | Diaz          | Humacao       | P.R.    |
+| Andy      | Gonzalez      | Rio Piedras   | P.R.    |
+| Angel     | Mangual       | Juana Diaz    | P.R.    |
+| Angel     | Miranda       | Arecibo       | P.R.    |
+| Angel     | Santos        | Rio Piedras   | P.R.    |
+| Angel     | Pagan         | Rio Piedras   | P.R.    |
+| Angel     | Sanchez       | Humacao       | P.R.    |
+| Armando   | Rios          | Santurce      | P.R.    |
+| Art       | Lopez         | Mayaguez      | P.R.    |
+| Bengie    | Molina        | Rio Piedras   | P.R.    |
+| Benito    | Santiago      | Ponce         | P.R.    |
+| Benny     | Ayala         | Yauco         | P.R.    |
+| Bernie    | Williams      | San Juan      | P.R.    |
+| Bert      | Pena          | Santurce      | P.R.    |
+| Bobby     | Munoz         | Rio Piedras   | P.R.    |
+| Bombo     | Rivera        | Ponce         | P.R.    |
+| Brian     | Navarreto     | Bayamon       | P.R.    |
+| Candy     | Maldonado     | Humacao       | P.R.    |
+| Candy     | Sierra        | Rio Piedras   | P.R.    |
+| Carlos    | Bernier       | Juana Diaz    | P.R.    |
+| Carlos    | Velazquez     | Loiza         | P.R.    |
+| Carlos    | Lezcano       | Arecibo       | P.R.    |
+| Carlos    | Ponce         | Rio Piedras   | P.R.    |
+| Carlos    | Baerga        | Santurce      | P.R.    |
+| Carlos    | Delgado       | Aguadilla     | P.R.    |
+| Carlos    | Beltran       | Manati        | P.R.    |
+| Carlos    | Rivera        | Fajardo       | P.R.    |
+| Carlos    | Corporan      | Hato Rey      | P.R.    |
+| Carlos    | Correa        | Ponce         | P.R.    |
+| Carmelo   | Martinez      | Dorado        | P.R.    |
+| Cesar     | Crespo        | Rio Piedras   | P.R.    |
+| Charlie   | Montoyo       | Florida       | P.R.    |
+| Chico     | Ruiz          | Santurce      | P.R.    |
+| Christian | Colon         | Cayey         | P.R.    |
+| Christian | Vazquez       | Bayamon       | P.R.    |
+| Coco      | Laboy         | Ponce         | P.R.    |
+| Damon     | Mashore       | Ponce         | P.R.    |
+| Danny     | Tartabull     | San Juan      | P.R.    |
+| Danny     | Ortiz         | Caguas        | P.R.    |
+| Dave      | Rosello       | Mayaguez      | P.R.    |
+| Dicky     | Gonzalez      | Bayamon       | P.R.    |
+| Ed        | Figueroa      | Ciales        | P.R.    |
+| Ed        | Romero        | Santurce      | P.R.    |
+| Ed        | Nunez         | Humacao       | P.R.    |
+| Ed        | Correa        | Hato Rey      | P.R.    |
+| Eddie     | Vargas        | Guanica       | P.R.    |
+| Eddie     | Rosario       | Guayama       | P.R.    |
+| Edgar     | Diaz          | Santurce      | P.R.    |
+| Edgard    | Clemente      | Santurce      | P.R.    |
+| Eduardo   | Rodriguez     | Barceloneta   | P.R.    |
+| Edwards   | Guzman        | Bayamon       | P.R.    |
+| Edwin     | Rodriguez     | Ponce         | P.R.    |
+| Edwin     | Diaz          | Bayamon       | P.R.    |
+| Edwin     | Maysonet      | Arecibo       | P.R.    |
+| Edwin     | Diaz          | Naguabo       | P.R.    |
+| Edwin     | Rios          | Caguas        | P.R.    |
+| Ellie     | Rodriguez     | Fajardo       | P.R.    |
+| Emmanuel  | Rivera        | Mayaguez      | P.R.    |
+| Enrique   | Hernandez     | San Juan      | P.R.    |
+| Felipe    | Crespo        | Rio Piedras   | P.R.    |
+| Felipe    | Lopez         | Bayamon       | P.R.    |
+| Felix     | Mantilla      | Isabella      | P.R.    |
+| Felix     | Torres        | Ponce         | P.R.    |
+| Felix     | Millan        | Yabucoa       | P.R.    |
+| Fernando  | Gonzalez      | Arecibo       | P.R.    |
+| Fernando  | Cabrera       | Toa Baja      | P.R.    |
+| Fernando  | Cruz          | Bayamon       | P.R.    |
+| Francisco | Melendez      | Rio Piedras   | P.R.    |
+| Francisco | Oliveras      | Santurce      | P.R.    |
+| Francisco | Lindor        | Caguas        | P.R.    |
+| Frankie   | Libran        | Mayaguez      | P.R.    |
+| Geovany   | Soto          | San Juan      | P.R.    |
+| German    | Rivera        | Santurce      | P.R.    |
+| Gil       | Flores        | Ponce         | P.R.    |
+| Giovanni  | Soto          | Carolina      | P.R.    |
+| Hector    | Valle         | Vega Baja     | P.R.    |
+| Hector    | Cruz          | Arroyo        | P.R.    |
+| Hector    | Villanueva    | Rio Piedras   | P.R.    |
+| Hector    | Ortiz         | Rio Piedras   | P.R.    |
+| Hector    | Mercado       | Catano        | P.R.    |
+| Heliot    | Ramos         | Humacao       | P.R.    |
+| Henry     | Ramos         | Maunabo       | P.R.    |
+| Hiram     | Bithorn       | Santurce      | P.R.    |
+| Hiram     | Bocachica     | Ponce         | P.R.    |
+| Hiram     | Burgos        | Cayey         | P.R.    |
+| Irving    | Falu          | Hato Rey      | P.R.    |
+| Isan      | Diaz          | Bayamon       | P.R.    |
+| Ismael    | Villegas      | Rio Piedras   | P.R.    |
+| Ivan      | de Jesus      | Santurce      | P.R.    |
+| Ivan      | Calderon      | Fajardo       | P.R.    |
+| Ivan      | Rodriguez     | Manati        | P.R.    |
+| Ivan      | Cruz          | Fajardo       | P.R.    |
+| Ivan      | De Jesus      | Guaynabo      | P.R.    |
+| J. C.     | Romero        | Rio Piedras   | P.R.    |
+| Jack      | Lopez         | Rio Piedras   | P.R.    |
+| Jaime     | Cocanower     | San Juan      | P.R.    |
+| Jaime     | Navarro       | Bayamon       | P.R.    |
+| Javier    | Valentin      | Manati        | P.R.    |
+| Javier    | Martinez      | Bayamon       | P.R.    |
+| Javier    | Vazquez       | Ponce         | P.R.    |
+| Javier    | Cardona       | Santurce      | P.R.    |
+| Javier    | Lopez         | San Juan      | P.R.    |
+| Javier    | Baez          | Bayamon       | P.R.    |
+| Javy      | Lopez         | Ponce         | P.R.    |
+| Jerry     | Morales       | Yabucoa       | P.R.    |
+| Jesmuel   | Valentin      | Manati        | P.R.    |
+| Jesus     | Hernaiz       | Santurce      | P.R.    |
+| Jesus     | Vega          | Bayamon       | P.R.    |
+| Jesus     | Feliciano     | Bayamon       | P.R.    |
+| Jimmy     | Rosario       | Bayamon       | P.R.    |
+| Joe       | Colon         | Caguas        | P.R.    |
+| Joe       | Jimenez       | San Juan      | P.R.    |
+| Joel      | Pineiro       | Rio Piedras   | P.R.    |
+| Joey      | Cora          | Caguas        | P.R.    |
+| Johneshwy | Fargas        | Trujillo Alto | P.R.    |
+| Jonathan  | Sanchez       | Mayaguez      | P.R.    |
+| Jonathan  | Albaladejo    | San Juan      | P.R.    |
+| Jorge     | Roque         | Ponce         | P.R.    |
+| Jorge     | Posada        | Santurce      | P.R.    |
+| Jorge     | Padilla       | Rio Piedras   | P.R.    |
+| Jorge     | Lopez         | Caguas        | P.R.    |
+| Jose      | Santiago      | Coamo         | P.R.    |
+| Jose      | Pagan         | Barceloneta   | P.R.    |
+| Jose      | Santiago      | Juana Diaz    | P.R.    |
+| Jose      | Ortiz         | Ponce         | P.R.    |
+| Jose      | Cruz          | Arroyo        | P.R.    |
+| Jose      | Oquendo       | Rio Piedras   | P.R.    |
+| Jose      | Guzman        | Santa Isabel  | P.R.    |
+| Jose      | Lind          | Toabaja       | P.R.    |
+| Jose      | Melendez      | Naguabo       | P.R.    |
+| Jose      | Hernandez     | Rio Piedras   | P.R.    |
+| Jose      | Valentin      | Manati        | P.R.    |
+| Jose      | Alberro       | San Juan      | P.R.    |
+| Jose      | Cruz          | Arroyo        | P.R.    |
+| Jose      | Santiago      | Fajardo       | P.R.    |
+| Jose      | Vidro         | Mayaguez      | P.R.    |
+| Jose      | Molina        | Bayamon       | P.R.    |
+| Jose      | Rodriguez     | Cayey         | P.R.    |
+| Jose      | Leon          | Cayey         | P.R.    |
+| Jose      | Morales       | Rio Piedras   | P.R.    |
+| Jose      | De La Torre   | San Juan      | P.R.    |
+| Jose      | Berrios       | Bayamon       | P.R.    |
+| Jose      | De Leon       | Isabela       | P.R.    |
+| Jose      | Miranda       | Manati        | P.R.    |
+| Jovani    | Moran         | Mayaguez      | P.R.    |
+| Juan      | Pizarro       | Santurce      | P.R.    |
+| Juan      | Rios          | Mayaguez      | P.R.    |
+| Juan      | Beniquez      | San Sebastian | P.R.    |
+| Juan      | Bonilla       | Santurce      | P.R.    |
+| Juan      | Agosto        | Rio Piedras   | P.R.    |
+| Juan      | Nieves        | Santurce      | P.R.    |
+| Juan      | Gonzalez      | Arecibo       | P.R.    |
+| Juan      | Padilla       | Rio Piedras   | P.R.    |
+| Juan      | Centeno       | Arecibo       | P.R.    |
+| Julio     | Gotay         | Fajardo       | P.R.    |
+| Julio     | Navarro       | Vieques       | P.R.    |
+| Julio     | Gonzalez      | Caguas        | P.R.    |
+| Julio     | Valera        | Aguadilla     | P.R.    |
+| Junior    | Ortiz         | Humacao       | P.R.    |
+| Kennys    | Vargas        | Canovanas     | P.R.    |
+| Kiko      | Calero        | Santurce      | P.R.    |
+| Leo       | Gomez         | Canovanas     | P.R.    |
+| Luis      | Olmo          | Arecibo       | P.R.    |
+| Luis      | Marquez       | Aguadilla     | P.R.    |
+| Luis      | Arroyo        | Penuelas      | P.R.    |
+| Luis      | Alcaraz       | Humacao       | P.R.    |
+| Luis      | Alvarado      | Lajas         | P.R.    |
+| Luis      | Peraza        | Rio Piedras   | P.R.    |
+| Luis      | Melendez      | Aibonito      | P.R.    |
+| Luis      | Quintana      | Vega Baja     | P.R.    |
+| Luis      | Delgado       | Hatillo       | P.R.    |
+| Luis      | Rosado        | Santurce      | P.R.    |
+| Luis      | Aguayo        | Vega Baja     | P.R.    |
+| Luis      | DeLeon        | Ponce         | P.R.    |
+| Luis      | Quinones      | Ponce         | P.R.    |
+| Luis      | Rivera        | Cidra         | P.R.    |
+| Luis      | Aquino        | Santurce      | P.R.    |
+| Luis      | Alicea        | Santurce      | P.R.    |
+| Luis      | Lopez         | Cidra         | P.R.    |
+| Luis      | Matos         | Bayamon       | P.R.    |
+| Luis      | Figueroa      | Bayamon       | P.R.    |
+| Luis      | Montanez      | Bayamon       | P.R.    |
+| Luis      | Atilano       | Santurce      | P.R.    |
+| Manny     | Muniz         | Caguas        | P.R.    |
+| Mario     | Ramirez       | Yauco         | P.R.    |
+| Mario     | Diaz          | Humacao       | P.R.    |
+| Mario     | Feliciano     | Bayamon       | P.R.    |
+| Martin    | Maldonado     | Naguabo       | P.R.    |
+| Melvin    | Nieves        | San Juan      | P.R.    |
+| Michael   | Perez         | Catano        | P.R.    |
+| Miguel    | Fuentes       | Loiza Aldea   | P.R.    |
+| Mike      | Perez         | Yauco         | P.R.    |
+| Mike      | Lowell        | San Juan      | P.R.    |
+| Mike      | Rivera        | Rio Piedras   | P.R.    |
+| Milt      | Ramirez       | Mayaguez      | P.R.    |
+| Neftali   | Soto          | Manati        | P.R.    |
+| Nelson    | Velazquez     | Carolina      | P.R.    |
+| Nino      | Escalera      | Santurce      | P.R.    |
+| Noel      | Cuevas        | Camuy         | P.R.    |
+| Omar      | Olivares      | Mayaguez      | P.R.    |
+| Omir      | Santos        | Bayamon       | P.R.    |
+| Onix      | Concepcion    | Dorado        | P.R.    |
+| Oreste    | Marrero       | Bayamon       | P.R.    |
+| Orlando   | Cepeda        | Ponce         | P.R.    |
+| Orlando   | Alvarez       | Rio Grande    | P.R.    |
+| Orlando   | Isales        | Santurce      | P.R.    |
+| Orlando   | Sanchez       | Canovanas     | P.R.    |
+| Orlando   | Mercado       | Arecibo       | P.R.    |
+| Orlando   | Merced        | Hato Rey      | P.R.    |
+| Osvaldo   | Martinez      | Carolina      | P.R.    |
+| Otto      | Velez         | Ponce         | P.R.    |
+| Ozzie     | Virgil        | Mayaguez      | P.R.    |
+| Pedro     | Garcia        | Guayama       | P.R.    |
+| Pedro     | Munoz         | Ponce         | P.R.    |
+| Pedro     | Valdes        | Fajardo       | P.R.    |
+| Pedro     | Feliciano     | Rio Piedras   | P.R.    |
+| Pepe      | Mangual       | Ponce         | P.R.    |
+| Rafael    | Santo Domingo | Orocovis      | P.R.    |
+| Rafael    | Montalvo      | Rio Piedras   | P.R.    |
+| Rafael    | Carmona       | Rio Piedras   | P.R.    |
+| Ramon     | Conde         | Juana Diaz    | P.R.    |
+| Ramon     | Hernandez     | Carolina      | P.R.    |
+| Ramon     | Aviles        | Manati        | P.R.    |
+| Ramon     | Castro        | Vega Baja     | P.R.    |
+| Ramon     | Vazquez       | Aibonito      | P.R.    |
+| Raul      | Casanova      | Humacao       | P.R.    |
+| Raul      | Gonzalez      | Santurce      | P.R.    |
+| Rene      | Rivera        | Bayamon       | P.R.    |
+| Rey       | Quinones      | Rio Piedras   | P.R.    |
+| Rey       | Sanchez       | Rio Piedras   | P.R.    |
+| Rey       | Navarro       | Caguas        | P.R.    |
+| Ricky     | Bones         | Salinas       | P.R.    |
+| Ricky     | Otero         | Vega Baja     | P.R.    |
+| Ricky     | Ledee         | Ponce         | P.R.    |
+| Rico      | Rossy         | San Juan      | P.R.    |
+| Roberto   | Clemente      | Carolina      | P.R.    |
+| Roberto   | Vargas        | Santurce      | P.R.    |
+| Roberto   | Alomar        | Ponce         | P.R.    |
+| Roberto   | Hernandez     | Santurce      | P.R.    |
+| Roberto   | Rivera        | Bayamon       | P.R.    |
+| Roberto   | Perez         | Mayaguez      | P.R.    |
+| Robinson  | Cancel        | Lajas         | P.R.    |
+| Roger     | Moret         | Guayama       | P.R.    |
+| Ruben     | Gomez         | Arroyo        | P.R.    |
+| Ruben     | Sierra        | Rio Piedras   | P.R.    |
+| Ruben     | Gotay         | Rio Piedras   | P.R.    |
+| Rusty     | Torres        | Aguadilla     | P.R.    |
+| Sam       | Parrilla      | Santurce      | P.R.    |
+| Sandy     | Alomar        | Salinas       | P.R.    |
+| Sandy     | Alomar        | Salinas       | P.R.    |
+| Santiago  | Rosario       | Guayanilla    | P.R.    |
+| Saul      | Rivera        | San Juan      | P.R.    |
+| Sergio    | Ferrer        | Santurce      | P.R.    |
+| Sixto     | Lezcano       | Arecibo       | P.R.    |
+| Steven    | Moya          | Rio Piedras   | P.R.    |
+| Tito      | Navarro       | Rio Piedras   | P.R.    |
+| Tomas     | Nido          | Guaynabo      | P.R.    |
+| Tommy     | Cruz          | Arroyo        | P.R.    |
+| Tony      | Bernazard     | Caguas        | P.R.    |
+| Tony      | Rodriguez     | Rio Piedras   | P.R.    |
+| Valmy     | Thomas        | Santurce      | P.R.    |
+| Vic       | Power         | Arecibo       | P.R.    |
+| Victor    | Caratini      | Ponce         | P.R.    |
+| Vimael    | Machin        | Humacao       | P.R.    |
+| Wil       | Cordero       | Mayaguez      | P.R.    |
+| Wil       | Nieves        | San Juan      | P.R.    |
+| Willi     | Castro        | Rio Piedras   | P.R.    |
+| Willie    | Montanez      | Catano        | P.R.    |
+| Willie    | Hernandez     | Aguada        | P.R.    |
+| Willie    | Collazo       | Carolina      | P.R.    |
+| Xavier    | Cedeno        | Guayanilla    | P.R.    |
+| Yacksel   | Rios          | Caguas        | P.R.    |
+| Yadiel    | Rivera        | Caguas        | P.R.    |
+| Yadier    | Molina        | Bayamon       | P.R.    |
+| Yamil     | Benitez       | San Juan      | P.R.    |
++-----------+---------------+---------------+---------+
