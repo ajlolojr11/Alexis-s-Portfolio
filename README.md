@@ -13,3 +13,6 @@ Python <br>
 -ProjectSet7: Regular expressions <br>
 -ProjectSet8: OOP <br>
 -Final Project: Pong Clone
+
+SQL <br>
+-ProjectSet0: Querys <br>
